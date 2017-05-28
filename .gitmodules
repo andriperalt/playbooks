@@ -1,3 +1,0 @@
-[submodule "ansible-playbooks/library"]
-	path = ansible-playbooks/library
-	url = https://github.com/sanderboom/ansible-pacaur.git
