@@ -1,0 +1,4 @@
+- hosts: arch
+  tags: arch
+  roles:
+    - role: dotfiles

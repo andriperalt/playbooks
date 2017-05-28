@@ -1,0 +1,8 @@
+- name: Symlink dotfiles
+  file: src={{ item }}
+        dest="{{ansible_env.HOME}}/{{ item }}"
+        state=link
+        force=yes
+  with_items:
+    - .Xresources
+    - .zshrc
