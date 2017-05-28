@@ -1,0 +1,14 @@
+# file: LOCAL
+ 
+# --- hosts
+ 
+[local]
+localhost
+ 
+# --- groups
+ 
+[LOCAL:children]
+local
+ 
+[arch:children]
+local
