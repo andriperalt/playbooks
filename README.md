@@ -19,8 +19,8 @@ This is my Arch Linux and rxvt using Ansible.
 3. Run the Ansible playbook:
 
     ```
-    $ cd ~/.config/dotfiles
-    $ ./provision-local.sh
+    $ cd ~/.config/dotfiles/ansible-playbooks/
+    $ ./configure-arch.sh
     ```
 
 ### Acknowledgement
