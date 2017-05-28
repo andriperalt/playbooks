@@ -25,4 +25,5 @@ This is my Arch Linux and rxvt using Ansible.
 
 ### Acknowledgement
 
-- https://github.com/alanctkc/dotfiles
+- [Alan Thomas dotfiles](https://github.com/alanctkc/dotfiles)
+- [Alex Palcuie dotfiles](https://github.com/palcu/dotfiles)
