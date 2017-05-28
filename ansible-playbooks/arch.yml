@@ -1,4 +1,5 @@
 - hosts: arch
   tags: arch
   roles:
+    - role: font
     - role: dotfiles

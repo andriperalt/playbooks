@@ -1,0 +1,18 @@
+- name: Create temporary repo directory
+  tempfile:
+    state: directory
+    suffix: awesome-terminal-fonts
+
+- name: Clone awesome-terminal-fonts
+  git:
+    repo: 'https://github.com/gabrielelana/awesome-terminal-fonts.git'
+    dest: /tmp/awesome-terminal-fonts
+    version: patching-strategy
+
+- name: "Make {{ansible_env.HOME}}/.fonts directory"
+  file:
+    path: "{{ansible_env.HOME}}/.fonts"
+    state: directory
+
+- name: Execute patching
+  shell: /tmp/awesome-terminal-fonts/sourcecodepro.sh
