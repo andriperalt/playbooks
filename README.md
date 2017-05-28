@@ -4,10 +4,10 @@ This is my Arch Linux and rxvt using Ansible.
 
 ### Dotfiles installation
 
-1. Install [Ansible](https://wiki.archlinux.org/index.php/Ansible):
+1. Install [Ansible](https://wiki.archlinux.org/index.php/Ansible) and [Python 3](https://wiki.archlinux.org/index.php/Python):
 
     ```
-    $ sudo pacaur -S ansible
+    $ pacaur -S ansible python
     ```
 
 2. Clone this repo:
