@@ -1,0 +1,125 @@
+!
+!   .Xresources file
+!   Man pages: xrdb, Xsession
+!
+! --------------------------------------------
+! Note that $HOME/.Xdefaults is a relic from
+! X Version 10 (and  X11R1)  days, before
+! app-defaults  files were implemented.
+! It has been deprecated for over ten years
+! .Xresources should be used instead.
+! --------------------------------------------
+
+!---- URxvt - General settings
+
+URxvt*borderless:             true
+URxvt*scrollBar:              false
+
+! do not scroll with output
+URxvt*scrollTtyOutput:        false
+
+! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
+URxvt*scrollWithBuffer:       true
+
+! scroll back to the bottom on keypress
+URxvt*scrollTtyKeypress:      true
+
+!---- Light URxvt (Solarized Light, 11pt)
+! URxvt*font:                   xft:DejaVu Sans Mono for Powerline:pixelsize=15:antialias=true:hinting=true
+! URxvt*boldFont:               xft:DejaVu Sans Mono for Powerline:bold:pixelsize=15:antialias=true:hinting=true
+
+URxvt*font:                   xft:SourceCodePro+Powerline+Awesome Regular:pixelsize=16:antialias=true:hinting=true
+URxvt*boldFont:               xft:SourceCodePro+Powerline+Awesome Regular:bold:pixelsize=16:antialias=true:hinting=true
+
+!URxvt*background:             #FFFFFF
+!URxvt*foreground:             #0057E7
+!URxvt*fadeColor:              #FFFFFF
+!URxvt*cursorColor:            #586e75
+!URxvt*pointerColorBackground: #93a1a1
+!URxvt*pointerColorForeground: #586e75
+
+! Nastavuje kopirovani
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.keysym.Shift-Control-C: perl:clipboard:copy
+
+! disable the stupid ctrl+shift 'feature'
+URxvt.iso14755:               false
+URxvt.iso14755_52:            false
+
+!!*fading: 40
+!!*fadeColor: #FFFFFF
+!*cursorColor: #586e75
+!*pointerColorBackground: #93a1a1
+!*pointerColorForeground: #586e75
+
+!---- XTerm settings
+
+XTerm.termName:              xterm-256color
+XTerm.vt100.locale:          true
+XTerm.vt100.metaSendsEscape: true
+XTerm.vt100.backarrowKey:    false
+XTerm.ttyModes:              erase ^?
+XTerm.vt100.saveLines:       4096
+XTerm.vt100.geometry:        80x32
+XTerm.vt100.faceName:        xft:DejaVu Sans Mono for Powerline:pixelsize=14:antialias=true:hinting=true
+XTerm.vt100.boldFont:        xft:DejaVu Sans Mono for Powerline:bold:pixelsize=14:antialias=true:hinting=true
+XTerm.vt100.bellIsUrgent:    true
+XTerm.scaleHeight:           1.01
+xterm*borderWidth:           0
+
+!---- Common settings
+
+! *foreground: rgb:00/57/e7
+! *background: rgb:ff/ff/ff
+
+
+! Solarized color scheme for the X Window System
+!
+! http://ethanschoonover.com/solarized
+
+! Common
+
+#define S_yellow        #b58900
+#define S_orange        #cb4b16
+#define S_red           #dc322f
+#define S_magenta       #d33682
+#define S_violet        #6c71c4
+#define S_blue          #268bd2
+#define S_cyan          #2aa198
+#define S_green         #859900
+
+! Light
+
+#define S_base03        #fdf6e3
+#define S_base02        #eee8d5
+#define S_base01        #93a1a1
+#define S_base00        #839496
+#define S_base0         #657b83
+#define S_base1         #586e75
+#define S_base2         #073642
+#define S_base3         #002b36
+
+*background:              S_base03
+*foreground:              S_base0
+*fading:                  40
+*fadeColor:               S_base03
+*cursorColor:             S_base1
+*pointerColorBackground:  S_base01
+*pointerColorForeground:  S_base1
+
+*color0:                  S_base02
+*color1:                  S_red
+*color2:                  S_green
+*color3:                  S_yellow
+*color4:                  S_blue
+*color5:                  S_magenta
+*color6:                  S_cyan
+*color7:                  S_base2
+*color9:                  S_orange
+*color8:                  S_base03
+*color10:                 S_base01
+*color11:                 S_base00
+*color12:                 S_base0
+*color13:                 S_violet
+*color14:                 S_base1
+*color15:                 S_base3
