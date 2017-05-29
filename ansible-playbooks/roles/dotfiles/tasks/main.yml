@@ -1,5 +1,5 @@
 - name: Symlink dotfiles
-  file: src={{ item }}
+  file: src="{{ansible_env.HOME}}/.config/dotfiles/ansible-playbooks/roles/dotfiles/files/{{ item }}"
         dest="{{ansible_env.HOME}}/{{ item }}"
         state=link
         force=yes
