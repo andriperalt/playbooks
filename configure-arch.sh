@@ -1,2 +1,2 @@
 #!/bin/zsh
-ansible-playbook -i ansible-playbooks/inventories/LOCAL ansible-playbooks/arch.yml
+ansible-playbook --ask-become-pass -i ansible-playbooks/inventories/LOCAL ansible-playbooks/arch.yml

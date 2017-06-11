@@ -16,13 +16,12 @@ antigen bundle zsh-users/zsh-autosuggestions
 # Extra zsh completions.
 antigen bundle zsh-users/zsh-completions
 
-# Load the theme.
+# Configure and Load the theme.
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_COLOR_SCHEME='light'
 DEFAULT_USER=vashy
 POWERLEVEL9K_MODE='awesome-patched'
-# antigen theme robbyrussell
-# antigen theme funky
+POWERLEVEL9K_INSTALLATION_PATH="${ANTIGEN_BUNDLES}/bhilburn/powerlevel9k"
 antigen theme bhilburn/powerlevel9k powerlevel9k
 
 # Tell Antigen that you're done.

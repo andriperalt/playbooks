@@ -24,12 +24,33 @@ URxvt*scrollWithBuffer:       true
 ! scroll back to the bottom on keypress
 URxvt*scrollTtyKeypress:      true
 
-!---- Light URxvt (Solarized Light, 11pt)
+! -----------------------------
+! XFT SETTINGS
+! -----------------------------
+Xft.antialias:  true
+Xft.autohint:   false
+Xft.dpi:        96
+Xft.hinting:    true
+Xft.hintstyle:  hintslight
+Xft.lcdfilter:  lcddefault
+Xft.rgba:       rgb
+
 ! URxvt*font:                   xft:DejaVu Sans Mono for Powerline:pixelsize=15:antialias=true:hinting=true
 ! URxvt*boldFont:               xft:DejaVu Sans Mono for Powerline:bold:pixelsize=15:antialias=true:hinting=true
 
-URxvt*font:                   xft:SourceCodePro+Powerline+Awesome Regular:pixelsize=16:antialias=true:hinting=true
-URxvt*boldFont:               xft:SourceCodePro+Powerline+Awesome Regular:bold:pixelsize=16:antialias=true:hinting=true
+! URxvt*font: xft:Droid Sans Mono for Powerline Nerd Font Complete:regular:size=15:antialias=true:hinting=true
+! URxvt*font:                   xft:Fira Code:regular:size=11,xft:IBM 3270 Narrow:regular:size=11,xft:Meslo LG S for Powerline:regular:size=11
+
+! -----------------------------
+! FONTS
+! -----------------------------
+! URxvt*font:           xft:SourceCodePro+Powerline+Awesome Regular:pixelsize=18
+! URxvt*boldFont:       xft:SourceCodePro+Powerline+Awesome Regular:bold:pixelsize=18
+! URxvt.italicFont:     xft:SourceCodePro+Powerline+Awesome Regular:style=Regular:pixelsize=18,style=bold
+! URxvt.boldItalicFont: xft:SourceCodePro+Powerline+Awesome Regular:style=Regular:pixelsize=18,style=bold
+
+URxvt*font:                    xft:SourceCodePro+Powerline+Awesome Regular
+URxvt*boldFont:                xft:SourceCodePro+Powerline+Awesome Regular
 
 !URxvt*background:             #FFFFFF
 !URxvt*foreground:             #0057E7
@@ -61,8 +82,8 @@ XTerm.vt100.backarrowKey:    false
 XTerm.ttyModes:              erase ^?
 XTerm.vt100.saveLines:       4096
 XTerm.vt100.geometry:        80x32
-XTerm.vt100.faceName:        xft:DejaVu Sans Mono for Powerline:pixelsize=14:antialias=true:hinting=true
-XTerm.vt100.boldFont:        xft:DejaVu Sans Mono for Powerline:bold:pixelsize=14:antialias=true:hinting=true
+XTerm.vt100.faceName:        xft:SourceCodePro+Powerline+Awesome Regular:pixelsize=14:antialias=true:hinting=true
+XTerm.vt100.boldFont:        xft:SourceCodePro+Powerline+Awesome Regular:bold:pixelsize=14:antialias=true:hinting=true
 XTerm.vt100.bellIsUrgent:    true
 XTerm.scaleHeight:           1.01
 xterm*borderWidth:           0
