@@ -1,13 +1,8 @@
 - name: Install awesome-terminal-fonts-patched
   become: true
-  pacaur: name=awesome-terminal-fonts-patched state=absent
+  pacaur: name=awesome-terminal-fonts-patched
 
 - name: Install wget
   become: true
   become_user: "{{ansible_env.USER}}"
   pacaur: name=wget
-
-- name: Install nerd-fonts-complete
-  become: true
-  become_user: "{{ansible_env.USER}}"
-  pacaur: name=nerd-fonts-complete
