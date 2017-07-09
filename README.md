@@ -1,6 +1,6 @@
 ## Overview
 
-This is my Arch Linux and rxvt using Ansible.
+This is my Arch Linux configuration using Ansible.
 
 ### Dotfiles installation
 
