@@ -1,5 +1,6 @@
 - hosts: arch
   tags: arch
+  any_errors_fatal: true
   roles:
     - role: font
     - role: dotfiles
