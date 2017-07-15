@@ -2,11 +2,13 @@
   pacman:
     update_cache: yes
     upgrade: yes
+  become: true
 
 - name: Install zsh and zsh-completions
   pacman:
     name: zsh,zsh-completions
     state: present
+  become: true
 
 - name: Copy bashrc to zshrc
   copy:
@@ -20,3 +22,4 @@
     
 - name: Set zsh as default shell
   command: chsh -s /bin/zsh
+  become: true
