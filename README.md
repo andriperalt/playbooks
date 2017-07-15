@@ -13,8 +13,8 @@ This is my Arch Linux configuration using Ansible.
 2. Clone this repo:
 
     ```
-    $ git clone https://github.com/sanderboom/ansible-pacaur.git ~/.config/ansible-pacaur
-    $ git clone git@gitlab.com:arperalta3/dotfiles.git ~/.config/dotfiles
+    $ git clone https://github.com/arperalta3/ansible-packer.git ~/.config/ansible-pacaur
+    $ git clone https://github.com/arperalta3/dotfiles.git ~/.config/dotfiles
     ```
 
 3. Run the Ansible playbook:
