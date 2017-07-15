@@ -1,0 +1,22 @@
+- name: Run the equivalent of "pacman -Syu"
+  pacman:
+    update_cache: yes
+    upgrade: yes
+
+- name: Install zsh and zsh-completions
+  pacman:
+    name: zsh,zsh-completions
+    state: present
+
+- name: Copy bashrc to zshrc
+  copy:
+    src="{{ansible_env.HOME}}/.bashrc"
+    dest="{{ansible_env.HOME}}/.zshrc"
+
+- name: Copy bash_profile to zprofile
+  copy:
+    src="{{ansible_env.HOME}}/.bash_profile"
+    dest="{{ansible_env.HOME}}/.zprofile"
+    
+- name: Set zsh as default shell
+  command: chsh -s /bin/zsh
