@@ -1,3 +1,9 @@
+- name: Clone antigen repo
+  git:
+    repo: 'https://github.com/zsh-users/antigen.git'
+    dest: "{{ansible_env.HOME}}/.config/antigen"
+    version: master
+
 - name: Symlink dotfiles
   file: src="{{ansible_env.HOME}}/.config/dotfiles/ansible-playbooks/roles/dotfiles/files/{{ item }}"
         dest="{{ansible_env.HOME}}/{{ item }}"
