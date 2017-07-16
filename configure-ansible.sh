@@ -1,7 +1,7 @@
 #! /bin/sh
 
 # Install packages python, openssh and ansible
-sudo pacman -S python openssh ansible
+sudo pacman -S python openssh ansible git
 
 # Clone ansible-packer repo
 git clone https://github.com/arperalta3/ansible-packer.git ~/.config/ansible-pacaur
