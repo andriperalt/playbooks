@@ -1,5 +1,5 @@
 - name: Run the equivalent of "pacaur -Syu"
-  pacaur:
+  pacman:
     update_cache: yes
     upgrade: yes
   become: true
