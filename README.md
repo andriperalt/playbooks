@@ -4,26 +4,18 @@ This is my Arch Linux configuration using Ansible.
 
 ### Dotfiles installation
 
-1. Install [Python 3](https://wiki.archlinux.org/index.php/Python), [OpenSSH](https://wiki.archlinux.org/index.php/Secure_Shell) and [Ansible](https://wiki.archlinux.org/index.php/Ansible):
+1. Download configuration file:
 
-    ```
-    $ pacaur -S python openssh ansible
-    ```
+```
+curl -LOJ https://raw.githubusercontent.com/arperalta3/dotfiles/master/configure-ansible.sh
+```
 
-2. Clone this repo:
+2. Run playbook
 
-    ```
-    $ git clone https://github.com/arperalta3/ansible-packer.git ~/.config/ansible-pacaur
-    $ git clone https://github.com/arperalta3/dotfiles.git ~/.config/dotfiles
-    ```
-
-3. Run the Ansible playbook:
-
-    ```
-    $ ln -s ~/.config/ansible-pacaur/pacaur ~/.config/dotfiles/ansible-playbooks/library/pacaur
-    $ cd ~/.config/dotfiles/
-    $ sh configure-arch.sh
-    ```
+ ```
+$ cd ~/.config/dotfiles/
+$ sh configure-arch.sh
+```
 
 ### Acknowledgement
 
