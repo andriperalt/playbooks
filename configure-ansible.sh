@@ -35,5 +35,4 @@ printf "\n\nLinking ansible library pacaur\n\n"
 ln -s ~/.config/ansible-pacaur/pacaur ~/.config/playbooks/ansible-playbooks/library/pacaur
 
 printf "\n\nLinking ansible callback human log\n\n"
-ln -s ~/.config/ansible-human-log/human_log.py 
-~/.config/playbooks/ansible-playbooks/callback_plugins/human_log.py
+ln -s ~/.config/ansible-human-log/human_log.py ~/.config/playbooks/ansible-playbooks/callback_plugins/human_log.py
