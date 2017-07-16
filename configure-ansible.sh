@@ -10,8 +10,8 @@ sudo pacman -S --needed reflector
 printf "\n\nRunning reflector\n\n"
 sudo reflector --latest 200 --sort rate --save /etc/pacman.d/mirrorlist
 
-printf "\n\nInstalling packages python, openssh and ansible\n\n"
-sudo pacman -S --needed python openssh ansible git
+printf "\n\nInstalling packages gnome-keyring, git, python, openssh and ansible\n\n"
+sudo pacman -S --needed gnome-keyring git python openssh ansible
 
 printf "\n\nCloning ansible-packer repo\n\n"
 git clone https://github.com/arperalta3/ansible-packer.git ~/.config/ansible-pacaur
