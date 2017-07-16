@@ -8,6 +8,7 @@
   args:
     chdir: "{{ configs_path }}/cower"
   become: true
+  become_user: "{{ ansible_env.USER }}"
 
 - name: Clone pacaur
   git:
@@ -19,3 +20,4 @@
   args:
     chdir: "{{ configs_path }}/pacaur"
   become: true
+  become_user: "{{ ansible_env.USER }}"
