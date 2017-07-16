@@ -22,8 +22,8 @@ ssh-keygen -t rsa -b 4096
 printf "\n\nCopying ssh-key\n\n"
 ssh-copy-id $USER@localhost
 
-printf "\n\nCloning ansible-packer repo\n\n"
-git clone https://github.com/arperalta3/ansible-packer.git ~/.config/ansible-pacaur
+printf "\n\nCloning ansible-pacaur repo\n\n"
+git clone https://github.com/arperalta3/ansible-pacaur.git ~/.config/ansible-pacaur
 
 printf "\n\nCloning playbooks repo\n\n"
 git clone https://github.com/arperalta3/playbooks.git ~/.config/playbooks
