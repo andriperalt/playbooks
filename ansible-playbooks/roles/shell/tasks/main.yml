@@ -3,12 +3,18 @@
     update_cache: yes
     upgrade: yes
   become: true
+  register: system-update
+  
+- debug: var=system-update
 
 - name: Install zsh and zsh-completions
   pacman:
     name: zsh,zsh-completions
     state: present
   become: true
+  register: install-zsh-deps
+
+- debug: var=install-zsh-deps
 
 - name: Copy bashrc to zshrc
   copy:
