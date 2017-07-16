@@ -7,7 +7,7 @@ This is my Arch Linux configuration using Ansible.
 1. Download configuration file:
 
 ```
-$ curl -LOJ https://raw.githubusercontent.com/arperalta3/dotfiles/master/configure-ansible.sh > configure-ansible.sh
+$ curl -LOJ https://raw.githubusercontent.com/arperalta3/dotfiles/master/configure-ansible.sh >> configure-ansible.sh
 ```
 
 2. Run playbook
