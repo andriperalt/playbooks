@@ -1,2 +1,3 @@
 *.retry
 ansible-playbooks/library/pacaur
+ansible.log
