@@ -36,6 +36,7 @@ $ curl -LOJ https://raw.githubusercontent.com/arperalta3/playbooks/master/config
 + Run ansible configuration:
 
 ```
+$ cd ansible-playbooks
 $ sh configure-ansible.sh
 ```
 

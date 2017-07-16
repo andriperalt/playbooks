@@ -4,7 +4,9 @@
     dest: "{{ configs_path }}/cower"
 
 - name: Install cower
-  command: makepkg -si chdir="{{ configs_path }}/cower"
+  command: makepkg -si arg1
+  args:
+    chdir: {{ configs_path|quote }}/cower
   become: true
 
 - name: Clone pacaur
@@ -13,5 +15,7 @@
     dest: "{{ configs_path }}/pacaur"
     
 - name: Install pacaur
-  command: makepkg -si chdir="{{ configs_path }}/pacaur"
+  command: makepkg -si arg1
+  args:
+    chdir: {{ configs_path|quote }}/pacaur
   become: true
