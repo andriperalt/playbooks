@@ -3,8 +3,13 @@
     repo: 'https://aur.archlinux.org/cower.git'
     dest: "{{ configs_path }}/cower"
 
+- name: Add keys for cower
+  command: gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53 arg1
+  args:
+    chdir: "{{ configs_path }}/cower"
+
 - name: Compile cower
-  command: makepkg --noconfirm -mfs arg1
+  command: makepkg --noconfirm  -mfs arg1
   args:
     chdir: "{{ configs_path }}/cower"
   register: cower_makepkg_result
@@ -21,13 +26,6 @@
   become: true
 
 - debug: var=cower_install_result
-
-- name: Install cower
-  command: makepkg -si --noconfirm arg1
-  args:
-    chdir: "{{ configs_path }}/cower"
-  become: true
-  become_user: "{{ ansible_env.USER }}"
 
 - name: Clone pacaur
   git:
