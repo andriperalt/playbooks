@@ -1,26 +1,26 @@
 #! /bin/sh
 
-printf "Configure correct clock"
+printf "\nConfigure correct clock\n"
 sudo timedatectl set-ntp true
 sudo hwclock --systohc --utc
 
-printf "Installing reflector"
+printf "\nInstalling reflector\n"
 sudo pacman -S reflector
 
-printf "Running reflector"
+printf "\nRunning reflector\n"
 sudo reflector --latest 200 --sort rate --save /etc/pacman.d/mirrorlist
 
-printf "Installing packages python, openssh and ansible"
+printf "\nInstalling packages python, openssh and ansible\n"
 sudo pacman -S python openssh ansible git
 
-printf "Cloning ansible-packer repo"
+printf "\nCloning ansible-packer repo\n"
 git clone https://github.com/arperalta3/ansible-packer.git ~/.config/ansible-pacaur
 
-printf "Cloning dotfiles repo"
+printf "\nCloning dotfiles repo\n"
 git clone https://github.com/arperalta3/dotfiles.git ~/.config/dotfiles
 
-printf "Linking ansible library pacaur"
+printf "\nLinking ansible library pacaur\n"
 ln -s ~/.config/ansible-pacaur/pacaur ~/.config/dotfiles/ansible-playbooks/library/pacaur
 
-printf "Setting current directory to dotfiles repo"
+printf "\nSetting current directory to dotfiles repo\n"
 cd ~/.config/dotfiles/
