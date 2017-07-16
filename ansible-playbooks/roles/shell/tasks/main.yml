@@ -42,5 +42,6 @@
 - name: Set zsh as default shell
   shell: chsh -s /bin/zsh
   become: true
+  become_user: "{{ ansible_env.USER }}"
   register: set_zsh_as_default_result
   failed_when: "'Shell not changed' in set_zsh_as_default_result.stderr"
