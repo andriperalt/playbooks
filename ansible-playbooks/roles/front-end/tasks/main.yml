@@ -1,8 +1,20 @@
-- name: Install i3 group, dmenu, xorg-xprop, xautolock and lxappearance
+- name: Install Xorg packages
   pacaur:
-    name: i3-wm,i3blocks,i3lock,i3status,dmenu,xorg-xprop,xautolock,lxappearance
+    name: xorg-server,xf86-video-fbdev,xf86-input-libinput,xorg-xinput,xorg-xprop,mesa,xorg-xinit
     state: present
   become: true
+
+- name: Install i3 packages
+  pacaur:
+    name: i3-wm,i3blocks,i3lock,i3status,dmenu,xautolock,lxappearance,compton
+    state: present
+  become: true
+
+- name: X startup tweaking (startx)
+  lineinfile:
+    path: /usr/bin/startx
+    regexp: '^defaultserverargs='
+    line: 'defaultserverargs="-deferglyphs 16"'
 
 - name: Create i3 config dir
   file:
@@ -30,12 +42,6 @@
     dest: "{{ configs_path }}/i3status/config"
     state: link
     force: yes
-
-- name: Install xorg-xinit
-  pacman:
-    name: xorg-xinit
-    state: present
-  become: true
 
 - name: Symlink xorg configuration files
   file:
