@@ -1,19 +1,32 @@
 ## Overview
 
-This is my Arch Linux configuration using Ansible.
+These are my ansible playbooks to configure multiple things. This is for Arch Linux only.
 
-### Dotfiles installation
+### Playbooks installation
 
-1. Download configuration file:
++ Download configuration file:
 
 ```
-$ curl -LOJ https://raw.githubusercontent.com/arperalta3/dotfiles/master/configure-ansible.sh >> configure-ansible.sh
+$ curl -LOJ https://raw.githubusercontent.com/arperalta3/playbooks/master/configure-ansible.sh >> configure-ansible.sh
 ```
 
-2. Run playbook
++ Run ansible configuration:
+
+```
+$ sh configure-ansible.sh
+```
+
+### Configure an arch linux configuration
+
++ Find playbook
+
+```
+$ cd ~/.config/playbooks/
+```
+
++ Run playbook
 
  ```
-$ cd ~/.config/dotfiles/
 $ sh configure-arch.sh
 ```
 
