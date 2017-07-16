@@ -42,6 +42,9 @@ $ sh configure-ansible.sh
 
 ### Configure an arch linux configuration
 
++ Prerequisites
+  + base-devel installed
+
 + Find playbook
 
 ```
