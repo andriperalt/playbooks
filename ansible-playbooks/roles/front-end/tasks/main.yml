@@ -27,19 +27,19 @@
 
 - name: Symlink i3 configuration file
   file:
-    src: "{{ roles_path }}/font-end/files/i3-config"
+    src: "{{ roles_path }}/font-end/files/i3_config"
     dest: "{{ configs_path }}/i3/config"
     state: link
     force: yes
 
 - name: Create i3-status config dir
   file:
-    path: "{{ configs_path }}/i3status"         
+    path: "{{ configs_path }}/i3status"
     state: directory
 
 - name: Symlink i3status configuration file
   file:
-    src: "{{ roles_path }}/front-end/files/i3status-config"
+    src: "{{ roles_path }}/front-end/files/i3status_config"
     dest: "{{ configs_path }}/i3status/config"
     state: link
     force: yes
