@@ -5,7 +5,7 @@
   become: true
   register: system_update
   
-- debug: var=system_update.stdout_lines
+- debug: var=system_update
 
 - name: Install zsh and zsh-completions
   pacman:
@@ -14,7 +14,7 @@
   become: true
   register: install_zsh_deps
 
-- debug: var=install_zsh_deps.stdout_lines
+- debug: var=install_zsh_deps
 
 - name: Copy bashrc to zshrc
   copy:
