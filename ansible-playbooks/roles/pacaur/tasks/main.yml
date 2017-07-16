@@ -1,0 +1,17 @@
+- name: Clone cower
+  git:
+    repo: 'https://aur.archlinux.org/cower.git'
+    dest: "{{ configs_path }}/cower"
+
+- name: Install cower
+  command: makepkg -si chdir="{{ configs_path }}/cower"
+  become: true
+
+- name: Clone pacaur
+  git:
+    repo: 'https://aur.archlinux.org/pacaur.git'
+    dest: "{{ configs_path }}/pacaur"
+    
+- name: Install pacaur
+  command: makepkg -si chdir="{{ configs_path }}/pacaur"
+  become: true

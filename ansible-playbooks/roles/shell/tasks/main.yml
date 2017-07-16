@@ -1,5 +1,5 @@
-- name: Run the equivalent of "pacman -Syu"
-  pacman:
+- name: Run the equivalent of "pacaur -Syu"
+  pacaur:
     update_cache: yes
     upgrade: yes
   become: true
@@ -8,7 +8,7 @@
 - debug: var=system_update
 
 - name: Install zsh and zsh-completions
-  pacman:
+  pacaur:
     name: zsh,zsh-completions
     state: present
   become: true
