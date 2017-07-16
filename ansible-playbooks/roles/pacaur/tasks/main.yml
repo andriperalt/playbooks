@@ -6,7 +6,7 @@
 - name: Install cower
   command: makepkg -si arg1
   args:
-    chdir: {{ configs_path|quote }}/cower
+    chdir: "{{ configs_path }}/cower"
   become: true
 
 - name: Clone pacaur
@@ -17,5 +17,5 @@
 - name: Install pacaur
   command: makepkg -si arg1
   args:
-    chdir: {{ configs_path|quote }}/pacaur
+    chdir: "{{ configs_path }}/pacaur"
   become: true
