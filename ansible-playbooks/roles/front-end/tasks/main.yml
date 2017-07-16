@@ -1,8 +1,13 @@
 - name: Install i3 group, dmenu, xorg-xprop, xautolock and lxappearance
-  pacman:
+  pacaur:
     name: i3-wm,i3blocks,i3lock,i3status,dmenu,xorg-xprop,xautolock,lxappearance
     state: present
   become: true
+
+- name: Create i3 config dir
+  file:
+    path: ="{{ configs_path }}/i3"
+    state: directory
 
 - name: Symlink i3 configuration file
   file:
@@ -10,6 +15,11 @@
     dest="{{ configs_path }}/i3/config"
     state=link
     force=yes
+
+- name: Create i3-status config dir
+  file:
+    path: ="{{ configs_path }}/i3status"         
+    state: directory
 
 - name: Symlink i3status configuration file
   file:
