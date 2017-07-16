@@ -5,13 +5,13 @@ sudo timedatectl set-ntp true
 sudo hwclock --systohc --utc
 
 printf "\n\nInstalling reflector\n\n"
-sudo pacman -S reflector
+sudo pacman -S --needed reflector
 
 printf "\n\nRunning reflector\n\n"
 sudo reflector --latest 200 --sort rate --save /etc/pacman.d/mirrorlist
 
 printf "\n\nInstalling packages python, openssh and ansible\n\n"
-sudo pacman -S python openssh ansible git
+sudo pacman -S --needed python openssh ansible git
 
 printf "\n\nCloning ansible-packer repo\n\n"
 git clone https://github.com/arperalta3/ansible-packer.git ~/.config/ansible-pacaur
