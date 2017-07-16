@@ -1,13 +1,17 @@
 - name: Install awesome-terminal-fonts-patched
-  pacaur: name=awesome-terminal-fonts-patched
+  pacaur:
+    name: awesome-terminal-fonts-patched
+    state: present
   become: true
 
 - name: Install rxvt-unicode-cvs-patched-wideglyphs
-  pacaur: name=rxvt-unicode-cvs-patched-wideglyphs
+  pacaur:
+    name: rxvt-unicode-cvs-patched-wideglyphs
+    state: present
   become: true
 
 - name: Install wget
-  pacman:
+  pacaur:
     name: wget
     state: present
   become: true
