@@ -1,25 +1,8 @@
-- name: Install xorg-xinit
-  pacman:
-    name: xorg-xinit
-    state: present
-  become: true
-
 - name: Install i3 group and dmenu
   pacman:
     name: i3-wm,i3blocks,i3lock,i3status,dmenu
     state: present
   become: true
-
-- name: Symlink xorg configuration files
-  file:
-    src="{{ansible_env.HOME}}/.config/dotfiles/ansible-playbooks/roles/front-end/files/{{ item }}"
-    dest="{{ansible_env.HOME}}/{{ item }}"
-    state=link
-    force=yes
-  with_items:
-    - .xserverrc
-    - .xinitrc
-    - .zprofile
 
 - name: Symlink i3 configuration file
   file:
@@ -34,3 +17,20 @@
     dest="{{ansible_env.HOME}}/.config/i3status/config"
     state=link
     force=yes
+
+- name: Install xorg-xinit
+  pacman:
+    name: xorg-xinit
+    state: present
+  become: true
+
+- name: Symlink xorg configuration files
+  file:
+    src="{{ansible_env.HOME}}/.config/dotfiles/ansible-playbooks/roles/front-end/files/{{ item }}"
+    dest="{{ansible_env.HOME}}/{{ item }}"
+    state=link
+    force=yes
+  with_items:
+    - .xserverrc
+    - .xinitrc
+    - .zprofile
