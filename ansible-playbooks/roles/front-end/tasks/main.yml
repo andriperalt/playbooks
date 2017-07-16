@@ -21,9 +21,6 @@
   file:
     path: "{{ configs_path }}/i3"
     state: directory
-  register: create-i3-dir
-
-- debug: var=create-i3-dir
 
 - name: Symlink i3 configuration file
   file:
