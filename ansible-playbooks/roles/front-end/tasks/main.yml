@@ -6,7 +6,7 @@
 
 - name: Create i3 config dir
   file:
-    path: ="{{ configs_path }}/i3"
+    path: "{{ configs_path }}/i3"
     state: directory
   register: create-i3-dir
 
@@ -14,22 +14,22 @@
 
 - name: Symlink i3 configuration file
   file:
-    src="{{ roles_path }}/font-end/files/i3-config"
-    dest="{{ configs_path }}/i3/config"
-    state=link
-    force=yes
+    src: "{{ roles_path }}/font-end/files/i3-config"
+    dest: "{{ configs_path }}/i3/config"
+    state: link
+    force: yes
 
 - name: Create i3-status config dir
   file:
-    path: ="{{ configs_path }}/i3status"         
+    path: "{{ configs_path }}/i3status"         
     state: directory
 
 - name: Symlink i3status configuration file
   file:
-    src="{{ roles_path }}/front-end/files/i3status-config"
-    dest="{{ configs_path }}/i3status/config"
-    state=link
-    force=yes
+    src: "{{ roles_path }}/front-end/files/i3status-config"
+    dest: "{{ configs_path }}/i3status/config"
+    state: link
+    force: yes
 
 - name: Install xorg-xinit
   pacman:
@@ -39,15 +39,17 @@
 
 - name: Symlink xorg configuration files
   file:
-    src="{{ roles_path }}/front-end/files/{{ item }}"
-    dest="{{ ansible_env.HOME }}/{{ item }}"
-    state=link
-    force=yes
+    src: "{{ roles_path }}/front-end/files/{{ item }}"
+    dest: "{{ ansible_env.HOME }}/{{ item }}"
+    state: link
+    force: yes
   with_items:
     - .xserverrc
     - .xinitrc
     - .zprofile
 
 - name: Install solarized versions of Numix GTK2 and GTK3 theme
-  pacaur: name=gtk-theme-numix-solarized
+  pacaur:
+    name: gtk-theme-numix-solarized
+    state: present
   become: true
