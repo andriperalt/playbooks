@@ -40,5 +40,7 @@
     force=yes
 
 - name: Set zsh as default shell
-  command: chsh -s /bin/zsh
+  shell: chsh -s /bin/zsh
   become: true
+  register: set_zsh_as_default_result
+  failed_when: "'Shell not changed' in set_zsh_as_default_result.stderr"
