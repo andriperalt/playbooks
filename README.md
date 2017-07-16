@@ -4,6 +4,29 @@ These are my ansible playbooks to configure multiple things. This is for Arch Li
 
 ### Playbooks installation
 
++ Make sure that your hostname is correted define on **/etc/hosts**
+
+	+ See hostname
+	
+	```
+	$ hostname
+	```
+
+  + Corrected configured **/etc/hosts**
+	
+	```
+	#
+	# /etc/hosts: static lookup table for host names
+	#
+
+	#<ip-address> <hostname.domain.org> <hostname>
+	127.0.0.1 localhost.localdomain 		localhost
+	::1				localhost.localdomain 		localhost
+	127.0.1.1	**hostname**.localdomain  **hostname**
+
+	# End of file
+	```
+
 + Download configuration file:
 
 ```
