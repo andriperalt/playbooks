@@ -1,2 +1,2 @@
-configs_path: ~/.config
+configs_path: "{{ ansible_env.HOME }}/.config"
 roles_path: "{{ configs_path }}/playbooks/ansible-playbooks/roles"
