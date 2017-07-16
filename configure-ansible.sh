@@ -1,5 +1,11 @@
 #! /bin/sh
 
+# Install package reflector
+sudo pacman -S reflector
+
+# Run reflector
+sudo reflector --latest 200 --sort rate --save /etc/pacman.d/mirrorlist; if [[ -f /etc/pacman.d/mirrorlist.pacnew ]]; then rm /etc/pacman.d/mirrorlist.pacnew; fi
+
 # Install packages python, openssh and ansible
 sudo pacman -S python openssh ansible git
 
