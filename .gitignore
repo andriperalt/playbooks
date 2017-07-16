@@ -1,3 +1,5 @@
 *.retry
 ansible-playbooks/library/pacaur
+ansible-playbooks/callback_plugins/human_log.py
+ansible-playbooks/callback_plugins/human_log.pyc
 ansible.log
