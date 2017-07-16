@@ -15,7 +15,7 @@
     path: /usr/bin/startx
     regexp: '^defaultserverargs='
     line: 'defaultserverargs="-deferglyphs 16"'
-    become: true
+  become: true
 
 - name: Create i3 config dir
   file:
