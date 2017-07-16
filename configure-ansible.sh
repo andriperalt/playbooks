@@ -11,7 +11,7 @@ printf "\n\nRunning reflector\n\n"
 sudo reflector --latest 200 --sort rate --save /etc/pacman.d/mirrorlist
 
 printf "\n\nInstalling packages gnome-keyring, git, python, openssh and ansible\n\n"
-sudo pacman -S --needed gnome-keyring git python openssh ansible
+sudo pacman -S --needed gnome-keyring libsecret seahorse git python openssh ansible
 
 printf "\n\nInstalling cower for pacaur\n\n"
 git clone https://aur.archlinux.org/cower.git ~/.config/cower
