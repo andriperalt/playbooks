@@ -4,9 +4,7 @@
     dest: "{{ configs_path }}/cower"
 
 - name: Add keys for cower
-  command: gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53 arg1
-  args:
-    chdir: "{{ configs_path }}/cower"
+  command: "gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53"
 
 - name: Compile cower
   command: makepkg --noconfirm  -mfs arg1
