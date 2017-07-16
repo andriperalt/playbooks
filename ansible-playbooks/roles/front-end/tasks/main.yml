@@ -1,20 +1,20 @@
-- name: Install i3 group, dmenu, xorg-xprop and xautolock
+- name: Install i3 group, dmenu, xorg-xprop, xautolock and lxappearance
   pacman:
-    name: i3-wm,i3blocks,i3lock,i3status,dmenu,xorg-xprop,xautolock
+    name: i3-wm,i3blocks,i3lock,i3status,dmenu,xorg-xprop,xautolock,lxappearance
     state: present
   become: true
 
 - name: Symlink i3 configuration file
   file:
-    src="{{ansible_env.HOME}}/.config/dotfiles/ansible-playbooks/roles/front-end/files/i3-config"
-    dest="{{ansible_env.HOME}}/.config/i3/config"
+    src="{{ roles_path }}/font-end/files/i3-config"
+    dest="{{ configs_path }}/i3/config"
     state=link
     force=yes
 
 - name: Symlink i3status configuration file
   file:
-    src="{{ansible_env.HOME}}/.config/dotfiles/ansible-playbooks/roles/front-end/files/i3status-config"
-    dest="{{ansible_env.HOME}}/.config/i3status/config"
+    src="{{ roles_path }}/front-end/files/i3status-config"
+    dest="{{ configs_path }}/i3status/config"
     state=link
     force=yes
 
@@ -26,11 +26,33 @@
 
 - name: Symlink xorg configuration files
   file:
-    src="{{ansible_env.HOME}}/.config/dotfiles/ansible-playbooks/roles/front-end/files/{{ item }}"
-    dest="{{ansible_env.HOME}}/{{ item }}"
+    src="{{ roles_path }}/front-end/files/{{ item }}"
+    dest="{{ ansible_env.HOME }}/{{ item }}"
     state=link
     force=yes
   with_items:
     - .xserverrc
     - .xinitrc
     - .zprofile
+
+- name: Clone cower
+  git:
+    repo: 'https://aur.archlinux.org/cower.git'
+    dest: "{{ configs_path }}/cower"
+
+- name: Install cower
+  command: makepkg -si chdir="{{ configs_path }}/cower"
+  become: true
+
+- name: Clone pacaur
+  git:
+    repo: 'https://aur.archlinux.org/pacaur.git'
+    dest: "{{ configs_path }}/pacaur"
+    
+- name: Install pacaur
+  command: makepkg -si chdir="{{ configs_path }}/pacaur"
+  become: true
+
+- name: Install solarized versions of Numix GTK2 and GTK3 theme
+  pacaur: name=gtk-theme-numix-solarized
+  become: true

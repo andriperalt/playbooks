@@ -130,7 +130,7 @@ xterm*borderWidth:           0
 
 ! Default to dark background if neither constant is defined, or if both are.
 #if !defined(SOLARIZED_LIGHT) && !defined(SOLARIZED_DARK)
-#define SOLARIZED_DARK
+#define SOLARIZED_LIGHT
 #elif defined(SOLARIZED_LIGHT) && defined(SOLARIZED_DARK)
 #undef SOLARIZED_LIGHT
 #endif

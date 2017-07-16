@@ -1,0 +1,19 @@
+- name: Install awesome-terminal-fonts-patched
+  pacaur: name=awesome-terminal-fonts-patched
+  become: true
+
+- name: Install rxvt-unicode-cvs-patched-wideglyphs
+  pacaur: name=rxvt-unicode-cvs-patched-wideglyphs
+  become: true
+
+- name: Install wget
+  pacman:
+    name: wget
+    state: present
+  become: true
+
+- name: Symlink .Xresources
+  file: src="{{ roles_path }}/terminal/files/.Xresources"
+        dest="{{ ansible_env.HOME }}/.Xresources"
+        state=link
+        force=yes

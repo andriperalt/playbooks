@@ -3,6 +3,5 @@
   any_errors_fatal: true
   roles:
     - role: shell
+    - role: terminal
     - role: front-end
-    - role: font
-    - role: dotfiles

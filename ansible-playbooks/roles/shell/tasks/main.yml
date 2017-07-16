@@ -12,14 +12,27 @@
 
 - name: Copy bashrc to zshrc
   copy:
-    src="{{ansible_env.HOME}}/.bashrc"
-    dest="{{ansible_env.HOME}}/.zshrc"
+    src="{{ ansible_env.HOME }}/.bashrc"
+    dest="{{ ansible_env.HOME }}/.zshrc"
 
 - name: Copy bash_profile to zprofile
   copy:
-    src="{{ansible_env.HOME}}/.bash_profile"
-    dest="{{ansible_env.HOME}}/.zprofile"
-    
+    src="{{ ansible_env.HOME }}/.bash_profile"
+    dest="{{ ansible_env.HOME }}/.zprofile"
+
+- name: Clone antigen repo
+  git:
+    repo: 'https://github.com/zsh-users/antigen.git'
+    dest: "{{ configs_path }}/antigen"
+    version: master
+
+- name: Symlink .zshrc
+  file:
+    src="{{ roles_path }}/shell/files/.zshrc"
+    dest="{{ ansible_env.HOME }}/.zshrc"
+    state=link
+    force=yes
+
 - name: Set zsh as default shell
   command: chsh -s /bin/zsh
   become: true
