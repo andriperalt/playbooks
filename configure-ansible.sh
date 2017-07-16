@@ -13,11 +13,6 @@ sudo reflector --latest 200 --sort rate --save /etc/pacman.d/mirrorlist
 printf "\n\nInstalling packages gnome-keyring, git, python, openssh and ansible\n\n"
 sudo pacman -S --needed gnome-keyring git python openssh ansible
 
-printf "\n\nAdd hostname to /etc/hosts\n\n"
-sudo sed -i '/::1 localhost.localdomain localhost/a 127.0.1.1	
-${HOSTNAME}.localdomain	${HOSTNAME}' 
-/etc/hosts
-
 printf "\n\nStarting ssh service\n\n"
 sudo systemctl start sshd.socket
 
