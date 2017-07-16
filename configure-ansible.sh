@@ -13,6 +13,14 @@ sudo reflector --latest 200 --sort rate --save /etc/pacman.d/mirrorlist
 printf "\n\nInstalling packages gnome-keyring, git, python, openssh and ansible\n\n"
 sudo pacman -S --needed gnome-keyring git python openssh ansible
 
+printf "\n\nInstalling cower for pacaur\n\n"
+git clone https://aur.archlinux.org/cower.git ~/.config/cower
+(cd ~/.config/cower && exec makepkg -si)
+
+printf "\n\nInstalling pacaur\n\n"
+git clone https://aur.archlinux.org/pacaur.git ~/.config/pacaur
+(cd ~/.config/pacaur && exec makepkg -si)
+
 printf "\n\nStarting ssh service\n\n"
 sudo systemctl start sshd.socket
 
