@@ -22,11 +22,14 @@ ssh-keygen -t rsa -b 4096
 printf "\n\nCopying ssh-key\n\n"
 ssh-copy-id $USER@localhost
 
+printf "\n\nRemove repos\n\n"
+rm -rf ~/.config/playbooks ~/.config/ansible-pacaur ~/.config/ansible-human-log
+
 printf "\n\nCloning ansible-pacaur repo\n\n"
 git clone https://github.com/arperalta3/ansible-pacaur.git ~/.config/ansible-pacaur
 
 printf "\n\nCloning ansible-human-log repo\n\n"
-git clone https://gist.github.com/cd706de198c85a8255f6.git ~/.config/ansible-human-log
+git clone https://github.com/jinesh-choksi/ansible-human_log.git ~/.config/ansible-human-log
 
 printf "\n\nCloning playbooks repo\n\n"
 git clone https://github.com/arperalta3/playbooks.git ~/.config/playbooks
