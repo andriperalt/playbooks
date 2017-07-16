@@ -8,7 +8,7 @@
   file:
     path: ="{{ configs_path }}/i3"
     state: directory
-  result: create-i3-dir
+  register: create-i3-dir
 
 - debug: var=create-i3-dir
 
