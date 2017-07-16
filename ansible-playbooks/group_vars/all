@@ -1,0 +1,2 @@
+configs_path: ~/.config
+roles_path: ~/.config/playbooks/ansible-playbooks/roles
