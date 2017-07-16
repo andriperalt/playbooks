@@ -1,5 +1,9 @@
 #! /bin/sh
 
+# Configure correct
+sudo timedatectl set-ntp true
+sudo hwclock --systohc --utc
+
 # Install package reflector
 sudo pacman -S reflector
 
