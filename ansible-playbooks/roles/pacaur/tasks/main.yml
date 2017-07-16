@@ -10,6 +10,7 @@
   shell: makepkg --noconfirm  -mfs
   args:
     chdir: "{{ configs_path }}/cower"
+    executable: /bin/bash
   register: cower_makepkg_result
 
 - shell: ls -1 {{ configs_path | quote }}/cower | grep pkg.tar
