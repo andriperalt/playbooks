@@ -15,6 +15,7 @@ sudo pacman -S --needed gnome-keyring git python openssh ansible
 
 printf "\n\nInstalling cower for pacaur\n\n"
 git clone https://aur.archlinux.org/cower.git ~/.config/cower
+gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53
 (cd ~/.config/cower && exec makepkg -si)
 
 printf "\n\nInstalling pacaur\n\n"
