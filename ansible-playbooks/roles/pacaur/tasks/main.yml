@@ -4,11 +4,9 @@
     dest: "{{ configs_path }}/cower"
 
 - name: Compile cower
-  command: makepkg --noconfirm --noprogressbar -mfs arg1
+  command: makepkg --noconfirm -mfs arg1
   args:
     chdir: "{{ configs_path }}/cower"
-  become: true
-  become_user: "{{ ansible_env.USER }}"
   register: cower_makepkg_result
 
 - shell: ls -1 {{ configs_path | quote }}/cower | grep pkg.tar

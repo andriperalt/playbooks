@@ -2,7 +2,7 @@
   tags: arch
   any_errors_fatal: true
   roles:
-    # - role: pacaur -> exclude til fixed
+    - role: pacaur
     - role: shell
     - role: terminal
     - role: front-end
