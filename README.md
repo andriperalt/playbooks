@@ -4,15 +4,7 @@ These are my ansible playbooks to configure multiple things. This is for Arch Li
 
 ### Playbooks installation
 
-+ Make sure that your hostname is correted define on **/etc/hosts**
-
-	+ See hostname
-	
-	```
-	$ hostname
-	```
-
-  + Corrected configured **/etc/hosts**
++ Make sure that your hostname is define on **/etc/hosts**:
 
 	```
 	#
@@ -22,7 +14,7 @@ These are my ansible playbooks to configure multiple things. This is for Arch Li
 	#<ip-address>	<hostname.domain.org>	<hostname>
 	127.0.0.1	localhost.localdomain	localhost
 	::1	localhost.localdomain	localhost
-	127.0.1.1	**hostname**.localdomain	**hostname**
+	127.0.1.1	**hostname**.localdomain**hostanme**
 
 	# End of file
 	```
@@ -36,11 +28,10 @@ $ curl -LOJ https://raw.githubusercontent.com/arperalta3/playbooks/master/config
 + Run ansible configuration:
 
 ```
-$ cd ansible-playbooks
 $ sh configure-ansible.sh
 ```
 
-### Configure an arch linux configuration
+### Configure an arch linux instalation
 
 + Prerequisites
   + base-devel installed
