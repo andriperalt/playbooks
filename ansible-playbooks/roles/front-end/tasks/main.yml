@@ -21,6 +21,7 @@
   file:
     path: "{{ configs_path }}/i3"
     state: directory
+    mode: "u=rwx,g=rx,o=rx"
 
 - name: Symlink i3 configuration file
   file:
@@ -28,11 +29,13 @@
     dest: "{{ configs_path }}/i3/config"
     state: link
     force: yes
+    mode: "u=rw,g=r,o=r"
 
-- name: Create i3-status config dir
+- name: Create i3status config dir
   file:
     path: "{{ configs_path }}/i3status"
     state: directory
+    mode: "u=rwx,g=rx,o=rx"
 
 - name: Symlink i3status configuration file
   file:
@@ -40,6 +43,7 @@
     dest: "{{ configs_path }}/i3status/config"
     state: link
     force: yes
+    mode: "u=rw,g=r,o=r"
 
 - name: Symlink xorg configuration files
   file:
@@ -47,6 +51,7 @@
     dest: "{{ ansible_env.HOME }}/{{ item }}"
     state: link
     force: yes
+    mode: "u=rw,g=r,o=r"
   with_items:
     - .xserverrc
     - .xinitrc
