@@ -1,10 +1,10 @@
-- name: Install awesome-terminal-fonts-patched
+- name: Install fonts
   pacaur:
-    name: awesome-terminal-fonts-patched
+    name: awesome-terminal-fonts,awesome-terminal-fonts-patched
     state: present
   become: true
 
-- name: Install rxvt-unicode-cvs-patched-wideglyphs
+- name: Install rxvt terminal
   pacaur:
     name: rxvt-unicode-cvs-patched-wideglyphs
     state: present
