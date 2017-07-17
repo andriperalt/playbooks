@@ -25,7 +25,7 @@
 
 - name: Symlink i3 configuration file
   file:
-    src: "{{ roles_path }}/font_end/files/i3_config"
+    src: "{{ roles_path }}/front_end/files/i3_config"
     dest: "{{ configs_path }}/i3/config"
     state: link
     force: yes
