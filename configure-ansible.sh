@@ -16,11 +16,11 @@ sudo pacman -S --needed gnome-keyring libsecret seahorse git python openssh ansi
 printf "\n\nInstalling cower for pacaur\n\n"
 git clone https://aur.archlinux.org/cower.git ~/.config/cower
 gpg --recv-keys --keyserver hkp://pgp.mit.edu 1EB2638FF56C0C53
-(cd ~/.config/cower && exec makepkg -si)
+cd ~/.config/cower && exec makepkg -si
 
 printf "\n\nInstalling pacaur\n\n"
 git clone https://aur.archlinux.org/pacaur.git ~/.config/pacaur
-(cd ~/.config/pacaur && exec makepkg -si)
+cd ~/.config/pacaur && exec makepkg -si
 
 printf "\n\nStarting ssh service\n\n"
 sudo systemctl start sshd.socket
