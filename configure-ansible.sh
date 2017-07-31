@@ -21,10 +21,10 @@ set -o errexit
   && sudo pacman -S --needed reflector \
   && echo "====== INFO: Installed reflector ======" \
 } && {
-  echo "\n\nRunning reflector\n\n" \
+  echo "Running reflector" \
   && sudo reflector --latest 200 --sort rate --save /etc/pacman.d/mirrorlist
 } && {
-  echo "\n\nInstalling packages gnome-keyring, git, python, openssh and ansible\n\n" \
+  echo "Installing packages gnome-keyring, git, python, openssh and ansible" \
   && sudo pacman -S --needed gnome-keyring libsecret seahorse git python openssh ansible
 } && {
   echo "\n\nInstalling cower for pacaur\n\n" \
@@ -54,12 +54,12 @@ set -o errexit
   echo "\n\nCloning ansible-human-log repo\n\n" \
   && git clone https://github.com/jinesh-choksi/ansible-human_log.git ~/.config/ansible-human-log
 } && {
-  echo "\n\nCloning playbooks repo\n\n" \
+  echo "Cloning playbooks repo" \
   && git clone https://github.com/arperalta3/playbooks.git ~/.config/playbooks
 } && {
-  printf "\n\nLinking ansible library pacaur\n\n" \
+  echo "Linking ansible library pacaur" \
   && ln -s ~/.config/ansible-pacaur/pacaur ~/.config/playbooks/ansible-playbooks/library/pacaur
 } && {
-  printf "\n\nLinking ansible callback human log\n\n" \
+  echo "Linking ansible callback human log" \
   && ln -s ~/.config/ansible-human-log/human_log.py ~/.config/playbooks/ansible-playbooks/callback_plugins/human_log.py
 }
