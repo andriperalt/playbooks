@@ -16,6 +16,15 @@
 
 - debug: var=install_zsh_deps
 
+- name: Install openssh-askpass
+  pacaur:
+    name: openssh-askpass
+    state: present
+  become: true
+  register: install_openssh_askpasss
+
+- debug: var=install_openssh_askpasss
+
 - name: Copy bashrc to zshrc
   copy:
     src="{{ ansible_env.HOME }}/.bashrc"
