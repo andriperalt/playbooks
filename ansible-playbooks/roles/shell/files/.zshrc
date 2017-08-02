@@ -1,6 +1,10 @@
 # Avoid the need to manually reset the terminal (https://wiki.archlinux.org/index.php/zsh#The_ttyctl_command)
 ttyctl -f
 
+# Aliases
+alias docker-cont-start="docker start" 
+alias docker-cont-get-ip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
+
 # Source clone antigen
 source ~/.config/antigen/antigen.zsh
 
