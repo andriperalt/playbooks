@@ -2,8 +2,10 @@
 ttyctl -f
 
 # Aliases
-alias docker-cont-start="docker start" 
-alias docker-cont-get-ip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
+alias dcs="docker start" 
+alias dcip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
+alias lkla="loadkeys la-latin-1"
+alias lkus="loadkeys us"
 
 # Source clone antigen
 source ~/.config/antigen/antigen.zsh
