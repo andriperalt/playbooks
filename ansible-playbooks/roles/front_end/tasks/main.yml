@@ -6,7 +6,7 @@
 
 - name: Install i3 packages
   pacaur:
-    name: i3-wm,i3blocks,i3lock,i3status,dmenu,xautolock,lxappearance,compton
+    name: i3-wm,i3blocks,i3lock,i3status,dmenu,xautolock,lxappearance,compton,scrot,imagemagick
     state: present
   become: true
 
@@ -25,7 +25,7 @@
 
 - name: Symlink i3 configuration file
   file:
-    src: "{{ roles_path }}/front_end/files/i3_config"
+    src: "{{ roles_path }}/front_end/files/config/i3_config"
     dest: "{{ configs_path }}/i3/config"
     state: link
     force: yes
@@ -39,7 +39,7 @@
 
 - name: Symlink i3status configuration file
   file:
-    src: "{{ roles_path }}/front_end/files/i3status_config"
+    src: "{{ roles_path }}/front_end/files/config/i3status_config"
     dest: "{{ configs_path }}/i3status/config"
     state: link
     force: yes
@@ -47,7 +47,7 @@
 
 - name: Symlink xorg configuration files
   file:
-    src: "{{ roles_path }}/front_end/files/{{ item }}"
+    src: "{{ roles_path }}/front_end/files/config/{{ item }}"
     dest: "{{ ansible_env.HOME }}/{{ item }}"
     state: link
     force: yes
@@ -56,6 +56,20 @@
     - .xserverrc
     - .xinitrc
     - .zprofile
+
+- name: Symlink scripts
+  file:
+    src: "{{ roles_path }}/front_end/files/scripts/{{ item }}"
+    dest: "/usr/bin/{{ item }}"
+    state: link
+    force: yes
+    owner: root
+    group: root
+    mode: "u=wxr,g=rx,o=rx"
+  with_items:
+    - i3exit
+    - blurlock
+  become: true
 
 - name: Install solarized versions of Numix GTK2 and GTK3 theme
   pacaur:
