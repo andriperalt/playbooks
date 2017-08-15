@@ -1,12 +1,18 @@
 - name: Install Xorg packages
   pacaur:
-    name: xorg-server,xf86-video-fbdev,xf86-input-libinput,xorg-xinput,xorg-xprop,mesa,xorg-xinit
+    name: xorg-server,xf86-video-fbdev,xf86-input-libinput,xorg-xinput,xorg-xprop,mesa,xorg-xinit,xorg-xkill
     state: present
   become: true
 
 - name: Install i3 packages
   pacaur:
-    name: i3-wm,i3blocks,i3lock,i3status,dmenu,xautolock,lxappearance,compton,scrot,imagemagick
+    name: i3-wm,i3blocks,i3lock,i3status,i3-scrot,dmenu
+    state: present
+  become: true
+
+- name: Install additional packages
+  pacaur:
+    name: xautolock,lxappearance,compton,imagemagick,libnotify,dunst
     state: present
   become: true
 
@@ -91,6 +97,7 @@
   with_items:
     - i3exit
     - blurlock
+    - dmenu_recency
 
 - name: Set correct permissions to scripts
   file:
@@ -100,6 +107,7 @@
   with_items:
     - i3exit
     - blurlock
+    - dmenu_recency
 
 - name: Install solarized versions of Numix GTK2 and GTK3 theme
   pacaur:
