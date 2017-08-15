@@ -27,8 +27,13 @@
   file:
     src: "{{ roles_path }}/front_end/files/config/i3_config"
     dest: "{{ configs_path }}/i3/config"
-    state: link
+    state: hard
     force: yes
+
+- name: Set correct permissions to i3 configuration file
+  file:
+    path: "{{ configs_path }}/i3/config"
+    state: touch
     mode: "u=rw,g=r,o=r"
 
 - name: Create i3status config dir
@@ -41,35 +46,60 @@
   file:
     src: "{{ roles_path }}/front_end/files/config/i3status_config"
     dest: "{{ configs_path }}/i3status/config"
-    state: link
+    state: hard
     force: yes
+
+- name: Set correct permissions to i3status configuration file
+  file:
+    path: "{{ configs_path }}/i3status/config"
+    state: touch
     mode: "u=rw,g=r,o=r"
 
 - name: Symlink xorg configuration files
   file:
     src: "{{ roles_path }}/front_end/files/config/{{ item }}"
     dest: "{{ ansible_env.HOME }}/{{ item }}"
-    state: link
+    state: hard
     force: yes
+  with_items:
+    - .xserverrc
+    - .xinitrc
+    - .zprofile
+
+- name: Set correct permissiones to xorg configuration files
+  file:
+    path: "{{ ansible_env.HOME }}/{{ item }}"
+    state: touch
     mode: "u=rw,g=r,o=r"
   with_items:
     - .xserverrc
     - .xinitrc
     - .zprofile
 
+- name: Create bin dir
+  file:
+    path: "{{ ansible_env.HOME }}/bin"
+    state: directory
+    mode: "u=rwx,g=rx,o=rx"
+
 - name: Symlink scripts
   file:
     src: "{{ roles_path }}/front_end/files/scripts/{{ item }}"
-    dest: "/usr/bin/{{ item }}"
-    state: link
+    dest: "{{ ansible_env.HOME }}/bin/{{ item }}"
+    state: hard
     force: yes
-    owner: root
-    group: root
+  with_items:
+    - i3exit
+    - blurlock
+
+- name: Set correct permissions to scripts
+  file:
+    path: "{{ ansible_env.HOME }}/bin/{{ item }}"
+    state: touch
     mode: "u=wxr,g=rx,o=rx"
   with_items:
     - i3exit
     - blurlock
-  become: true
 
 - name: Install solarized versions of Numix GTK2 and GTK3 theme
   pacaur:
