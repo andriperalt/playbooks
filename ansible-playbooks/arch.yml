@@ -5,4 +5,5 @@
     #- role: pacaur -> Exclude till fixed
     - role: shell
     - role: terminal
+    - role: back_end
     - role: front_end

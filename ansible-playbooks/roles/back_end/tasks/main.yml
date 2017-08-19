@@ -1,0 +1,37 @@
+#- name: Uncomment lib32 packages - title
+#  lineinfile:
+#    path: /etc/pacman.conf
+#    regexp: '^#[multilib]'
+#    line: '[multilib]'
+#  become: true
+
+#- name: Uncomment lib32 packages - path
+#  lineinfile:
+#    path: /etc/pacman.conf
+#    regexp: '^#Include = /etc/pacman.d/mirrorlist'
+#    line: 'Include = /etc/pacman.d/mirrorlist'
+#  become: true
+
+- name: Install util packages
+  pacaur:
+    name: arandr,p7zip
+    state: present
+  become: true
+
+- name: Install PulseAudio packages
+  pacaur:
+    name: pulseaudio,pulseaudio-bluetooth,pulseaudio-alsa,pavucontrol,lib32-libpulse,lib32-alsa-plugins
+    state: present
+  become: true
+
+- name: Install control packages
+  pacaur:
+    name: playerctl
+    state: present
+  become: true
+
+- name: Install console utils
+  pacaur:
+    name: feh
+    state: present
+  become: true

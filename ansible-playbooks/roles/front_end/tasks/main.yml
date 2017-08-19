@@ -1,6 +1,6 @@
 - name: Install Xorg packages
   pacaur:
-    name: xorg-server,xf86-video-fbdev,xf86-input-libinput,xorg-xinput,xorg-xprop,mesa,xorg-xinit,xorg-xkill
+    name: xorg-server,xf86-video-fbdev,xf86-input-libinput,xorg-xinput,xorg-xprop,mesa,xorg-xinit,xorg-xkill,xorg-xev,xorg-xbacklight
     state: present
   become: true
 
@@ -12,7 +12,13 @@
 
 - name: Install additional packages
   pacaur:
-    name: xautolock,lxappearance,compton,imagemagick,libnotify,dunst
+    name: xautolock,lxappearance,compton,imagemagick,libnotify,dunst,rofi
+    state: present
+  become: true
+
+- name: Install fonts packages
+  pacaur:
+    name: ttf-dejavu,ttf-liberation,nerd-fonts-complete,powerline-fonts
     state: present
   become: true
 

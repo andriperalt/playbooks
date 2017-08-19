@@ -1,0 +1,5 @@
+- name: Install ADB packages
+  pacaur:
+    name: android-tools,android-udev
+    state: present
+  become: true
