@@ -48,22 +48,22 @@
     state: touch
     mode: "u=rw,g=r,o=r"
 
-- name: Create i3status config dir
+- name: Create i3blocks config dir
   file:
-    path: "{{ configs_path }}/i3status"
+    path: "{{ configs_path }}/i3blocks"
     state: directory
     mode: "u=rwx,g=rx,o=rx"
 
-- name: Symlink i3status configuration file
+- name: Symlink i3blocks configuration file
   file:
-    src: "{{ roles_path }}/front_end/files/config/i3status_config"
-    dest: "{{ configs_path }}/i3status/config"
+    src: "{{ roles_path }}/front_end/files/config/i3blocks.conf"
+    dest: "{{ configs_path }}/i3blocks/config"
     state: hard
     force: yes
 
-- name: Set correct permissions to i3status configuration file
+- name: Set correct permissions to i3blocks configuration file
   file:
-    path: "{{ configs_path }}/i3status/config"
+    path: "{{ configs_path }}/i3blocks/config"
     state: touch
     mode: "u=rw,g=r,o=r"
 
