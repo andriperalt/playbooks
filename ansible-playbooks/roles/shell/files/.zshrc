@@ -7,7 +7,8 @@ alias docker-cont-ip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.I
 alias keyboard-la="loadkeys la-latin-1"
 alias keyboard-us="loadkeys us"
 alias pacaur-install="pacaur -Syu"
-alias ssh="TERM=xterm ssh"
+alias ssh="TERM=xterm-color ssh"
+alias sbt="TERM=xterm-color sbt"
 
 # Source clone antigen
 source ~/.config/antigen/antigen.zsh
