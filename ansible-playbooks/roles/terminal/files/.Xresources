@@ -10,21 +10,54 @@
 ! .Xresources should be used instead.
 ! --------------------------------------------
 
-!---- URxvt - General settings
-
+! -----------------------------
+! URxvt SETTINGS
+! -----------------------------
 URxvt*borderless:		true
-URxvt*scrollBar:		false
+URxvt*scrollBar:		true
+URxvt*scrollBar_right:		true
+URxvt*scrollstyle:		rxvt
 URxvt*saveLines:		12000
 URxvt.intensityStyles:		false
+URxvt*font:                    	xft:SourceCodePro+Powerline+Awesome Regular:pixelsize=15
+URxvt*boldFont:                	xft:SourceCodePro+Powerline+Awesome Regular:bold:pixelsize=16
 
 ! do not scroll with output
-URxvt*scrollTtyOutput:        false
+URxvt*scrollTtyOutput:		false
 
 ! scroll in relation to buffer (with mouse scroll or Shift+Page Up)
-URxvt*scrollWithBuffer:       true
+URxvt*scrollWithBuffer:       	true
 
 ! scroll back to the bottom on keypress
-URxvt*scrollTtyKeypress:      true
+URxvt*scrollTtyKeypress:      	true
+
+! Nastavuje kopirovani
+URxvt.keysym.Shift-Control-V:	perl:clipboard:paste
+URxvt.keysym.Shift-Control-C:	perl:clipboard:copy
+
+! disable the stupid ctrl+shift 'feature'
+URxvt.iso14755:               	false
+URxvt.iso14755_52:            	false
+
+! -----------------------------
+! XTerm SETTINGS
+! -----------------------------
+XTerm.termName:              	xterm-256color
+XTerm.vt100.locale:          	true
+XTerm.vt100.metaSendsEscape:	true
+XTerm.vt100.backarrowKey:    	false
+XTerm.ttyModes:              	erase ^?
+XTerm.vt100.saveLines:       	12000
+XTerm.vt100.geometry:        	80x32
+XTerm.vt100.faceName:        	xft:SourceCodePro+Powerline+Awesome Regular:pixelsize=15:antialias=true:hinting=true
+XTerm.vt100.boldFont:        	xft:SourceCodePro+Powerline+Awesome Regular:bold:pixelsize=16:antialias=true:hinting=true
+XTerm.vt100.bellIsUrgent:    	true
+XTerm.scaleHeight:           	1.5
+XTerm*borderWidth:           	0
+
+!Scrollbar
+XTerm.vt100.scrollBar: 		true
+XTerm.vt100.scrollbar.width: 	8
 
 ! -----------------------------
 ! XFT SETTINGS
@@ -37,63 +70,9 @@ Xft.hintstyle:  hintslight
 Xft.lcdfilter:  lcddefault
 Xft.rgba:       rgb
 
-! URxvt*font:                   xft:DejaVu Sans Mono for Powerline:pixelsize=15:antialias=true:hinting=true
-! URxvt*boldFont:               xft:DejaVu Sans Mono for Powerline:bold:pixelsize=15:antialias=true:hinting=true
-
-! URxvt*font: xft:Droid Sans Mono for Powerline Nerd Font Complete:regular:size=15:antialias=true:hinting=true
-! URxvt*font:                   xft:Fira Code:regular:size=11,xft:IBM 3270 Narrow:regular:size=11,xft:Meslo LG S for Powerline:regular:size=11
-
 ! -----------------------------
-! FONTS
+! Common SETTINGS
 ! -----------------------------
-! URxvt*font:           xft:SourceCodePro+Powerline+Awesome Regular:pixelsize=18
-! URxvt*boldFont:       xft:SourceCodePro+Powerline+Awesome Regular:bold:pixelsize=18
-! URxvt.italicFont:     xft:SourceCodePro+Powerline+Awesome Regular:style=Regular:pixelsize=18,style=bold
-! URxvt.boldItalicFont: xft:SourceCodePro+Powerline+Awesome Regular:style=Regular:pixelsize=18,style=bold
-
-URxvt*font:                    xft:SourceCodePro+Powerline+Awesome Regular:pixelsize=15
-URxvt*boldFont:                xft:SourceCodePro+Powerline+Awesome Regular:bold:pixelsize=16
-
-!URxvt*background:             #FFFFFF
-!URxvt*foreground:             #0057E7
-!URxvt*fadeColor:              #FFFFFF
-!URxvt*cursorColor:            #586e75
-!URxvt*pointerColorBackground: #93a1a1
-!URxvt*pointerColorForeground: #586e75
-
-! Nastavuje kopirovani
-URxvt.keysym.Shift-Control-V: perl:clipboard:paste
-URxvt.keysym.Shift-Control-C: perl:clipboard:copy
-
-! disable the stupid ctrl+shift 'feature'
-URxvt.iso14755:               false
-URxvt.iso14755_52:            false
-
-!!*fading: 40
-!!*fadeColor: #FFFFFF
-!*cursorColor: #586e75
-!*pointerColorBackground: #93a1a1
-!*pointerColorForeground: #586e75
-
-!---- XTerm settings
-
-XTerm.termName:              xterm-256color
-XTerm.vt100.locale:          true
-XTerm.vt100.metaSendsEscape: true
-XTerm.vt100.backarrowKey:    false
-XTerm.ttyModes:              erase ^?
-XTerm.vt100.saveLines:       4096
-XTerm.vt100.geometry:        80x32
-XTerm.vt100.faceName:        xft:SourceCodePro+Powerline+Awesome Regular:pixelsize=15:antialias=true:hinting=true
-XTerm.vt100.boldFont:        xft:SourceCodePro+Powerline+Awesome Regular:bold:pixelsize=16:antialias=true:hinting=true
-XTerm.vt100.bellIsUrgent:    true
-XTerm.scaleHeight:           1.01
-xterm*borderWidth:           0
-
-!---- Common settings
-
-! *foreground: rgb:00/57/e7
-! *background: rgb:ff/ff/ff
 
 !! drop in Solarized colorscheme for Xresources/Xdefaults
 

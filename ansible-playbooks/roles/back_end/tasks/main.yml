@@ -30,6 +30,12 @@
     state: present
   become: true
 
+- name: Install monitoring packages
+  pacaur:
+    name: acpi,sysstat
+    state: present
+  become: true
+
 - name: Install console utils
   pacaur:
     name: feh

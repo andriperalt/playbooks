@@ -2,10 +2,12 @@
 ttyctl -f
 
 # Aliases
-alias dcs="docker start" 
-alias dcip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
-alias lkla="loadkeys la-latin-1"
-alias lkus="loadkeys us"
+alias docker-s="docker start" 
+alias docker-cont-ip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
+alias keyboard-la="loadkeys la-latin-1"
+alias keyboard-us="loadkeys us"
+alias pacaur-install="pacaur -Syu"
+alias ssh="TERM=xterm ssh"
 
 # Source clone antigen
 source ~/.config/antigen/antigen.zsh
