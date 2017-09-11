@@ -3,10 +3,10 @@ ttyctl -f
 
 # Aliases
 alias docker-s="docker start" 
-alias docker-cont-ip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
+alias docker-c-ip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}'"
 alias key-la="loadkeys la-latin-1"
 alias key-us="loadkeys us"
-alias pacaur-inst="pacaur -Syu"
+alias pacaur-i="pacaur -Syu"
 alias ssh="TERM=xterm-color ssh"
 
 # Source clone antigen
