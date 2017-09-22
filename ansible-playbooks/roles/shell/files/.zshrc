@@ -7,6 +7,7 @@ alias docker-c-ip="docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAd
 alias key-la="loadkeys la-latin-1"
 alias key-us="loadkeys us"
 alias pacaur-i="pacaur -Syu"
+alias pacaur-c="pacaur -Scc"
 alias ssh="TERM=xterm-color ssh"
 
 # Source clone antigen
