@@ -16,8 +16,20 @@
     state: present
   become: true
 
+- name: Remove .Xresources
+  file:
+    path: "{{ ansible_env.HOME }}/.Xresources"
+    state: absent
+
 - name: Symlink .Xresources
-  file: src="{{ roles_path }}/terminal/files/.Xresources"
-        dest="{{ ansible_env.HOME }}/.Xresources"
-        state=link
-        force=yes
+  file:
+    src: "{{ roles_path }}/terminal/files/.Xresources"
+    dest: "{{ ansible_env.HOME }}/.Xresources"
+    state: hard
+    force: yes
+
+- name: Set correct permissions to .Xresources
+  file:
+    path: "{{ ansible_env.HOME }}/.Xresources"
+    state: touch
+    mode: "u=rw,g=r,o=r"

@@ -35,6 +35,11 @@
     state: directory
     mode: "u=rwx,g=rx,o=rx"
 
+- name: Remove i3 configuration file
+  file:
+    path: "{{ configs_path }}/i3/config"
+    state: absent
+
 - name: Symlink i3 configuration file
   file:
     src: "{{ roles_path }}/front_end/files/config/i3_config"
@@ -54,6 +59,11 @@
     state: directory
     mode: "u=rwx,g=rx,o=rx"
 
+- name: Remove i3blocks configuration file
+  file:
+    path: "{{ configs_path }}/i3blocks/config"
+    state: absent
+
 - name: Symlink i3blocks configuration file
   file:
     src: "{{ roles_path }}/front_end/files/config/i3blocks.conf"
@@ -66,6 +76,15 @@
     path: "{{ configs_path }}/i3blocks/config"
     state: touch
     mode: "u=rw,g=r,o=r"
+
+- name: Remove xorg configuration files
+  file:
+    path: "{{ ansible_env.HOME }}/{{ item }}"
+    state: absent
+  with_items:
+    - .xserverrc
+    - .xinitrc
+    - .zprofile
 
 - name: Symlink xorg configuration files
   file:
@@ -93,6 +112,15 @@
     path: "{{ ansible_env.HOME }}/bin"
     state: directory
     mode: "u=rwx,g=rx,o=rx"
+
+- name: Remove scripts
+  file:
+    path: "{{ ansible_env.HOME }}/bin/{{ item }}"
+    state: absent
+  with_items:
+    - i3exit
+    - blurlock
+    - dmenu_recency
 
 - name: Symlink scripts
   file:

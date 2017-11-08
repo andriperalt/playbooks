@@ -1,3 +1,4 @@
+# TODO: Fix
 #- name: Uncomment lib32 packages - title
 #  lineinfile:
 #    path: /etc/pacman.conf
@@ -5,6 +6,7 @@
 #    line: '[multilib]'
 #  become: true
 
+# TODO: Fix
 #- name: Uncomment lib32 packages - path
 #  lineinfile:
 #    path: /etc/pacman.conf
