@@ -19,8 +19,8 @@ URxvt*scrollBar_right:		true
 URxvt*scrollstyle:		rxvt
 URxvt*saveLines:		12000
 URxvt.intensityStyles:		false
-URxvt*font:                    	xft:SourceCodePro+Powerline+Awesome Regular:pixelsize=15
-URxvt*boldFont:                	xft:SourceCodePro+Powerline+Awesome Regular:bold:pixelsize=16
+URxvt*font:                    	xft:SourceCodePro+Powerline+Awesome Regular:pixelsize=25
+URxvt*boldFont:                	xft:SourceCodePro+Powerline+Awesome Regular:bold:pixelsize=26
 
 ! do not scroll with output
 URxvt*scrollTtyOutput:		false
