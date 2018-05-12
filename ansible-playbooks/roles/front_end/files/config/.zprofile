@@ -7,6 +7,6 @@
 typeset -U path
 path=(~/bin $path[@])
 
-if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
-  exec startx
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+  exec startx -- -keeptty > ~/.xorg.log 2>&1
 fi
