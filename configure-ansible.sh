@@ -55,9 +55,9 @@ configure_playbooks() {
 # Ask sudo pass
 [ "$UID" -eq 0 ] || exec sudo "$0" "$@"
 
-if ! configure_clock; then echo "Configuration of clock failed"; exit 1; fi
-if ! configure_mirrors; then echo "Configuration of mirrors failed"; exit 1; fi
-if ! install_deps; then echo "Installation of packages gnome-keyring, git, python, openssh and ansible failed"; exit 1; fi
-if ! install_pacaur; then echo "Installation of pacaur failed"; exit 1; fi
-if ! configure_ssh; then echo "Configuration of ssh failed"; exit 1; fi
-if ! configure_playbooks; then echo "Configuration of ansible playbooks failed"; exit 1; fi
+if ! configure_clock; then echo " --- Configuration of clock failed  --- "; exit 1; fi
+if ! configure_mirrors; then echo " --- Configuration of mirrors failed --- "; exit 1; fi
+if ! install_deps; then echo " --- Installation of packages gnome-keyring, git, python, openssh and ansible failed --- "; exit 1; fi
+if ! install_pacaur; then echo " --- Installation of pacaur failed --- "; exit 1; fi
+if ! configure_ssh; then echo " --- Configuration of ssh failed --- "; exit 1; fi
+if ! configure_playbooks; then echo " --- Configuration of ansible playbooks failed --- "; exit 1; fi
