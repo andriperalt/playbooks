@@ -40,7 +40,7 @@ configure_ssh() {
   sudo systemctl start sshd.socket
   sudo systemctl enable sshd.socket
   ssh-keygen -t rsa -b 4096
-  ssh-copy-id $USER@localhost
+  ssh-copy-id "$USER@localhost"
 }
 
 configure_playbooks() {
