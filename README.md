@@ -21,14 +21,15 @@ These are my ansible playbooks to configure multiple things. This is for Arch Li
 
 + Download configuration file:
 
-```
-$ curl -LOJ https://raw.githubusercontent.com/arperalta3/playbooks/master/configure-ansible.sh >> configure-ansible.sh
+```shell
+curl -LOJ https://raw.githubusercontent.com/arperalta3/playbooks/master/configure-ansible.sh >> configure-ansible.sh
 ```
 
 + Run ansible configuration:
 
-```
-$ sh configure-ansible.sh
+```shell
+chmod +x configure-ansible.sh
+./configure-ansible.sh
 ```
 
 ### Configure an arch linux instalation
@@ -38,14 +39,14 @@ $ sh configure-ansible.sh
 
 + Find playbook
 
-```
-$ cd ~/.config/playbooks/
+```shell
+cd ~/.config/playbooks/
 ```
 
 + Run playbook
 
- ```
-$ sh configure-arch.sh
+ ```shell
+sh configure-arch.sh
 ```
 
 ### Acknowledgement

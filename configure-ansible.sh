@@ -52,6 +52,11 @@ configure_playbooks() {
   ln -s ~/.config/ansible-human-log/human_log.py ~/.config/playbooks/ansible-playbooks/callback_plugins/human_log.py
 }
 
+if [[ $UID != 0 ]]; then
+  echo "Please run this script with sudo:"
+  echo "sudo $0 $*"
+  exit 1
+fi
 if ! configure_clock; then echo "Configuration of clock failed"; exit 1; fi
 if ! configure_mirrors; then echo "Configuration of mirrors failed"; exit 1; fi
 if ! install_deps; then echo "Installation of packages gnome-keyring, git, python, openssh and ansible failed"; exit 1; fi
